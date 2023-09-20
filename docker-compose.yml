@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mongame:
+    container_name: Memology
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7359:7359"
+    volumes:
+      - ./www:/var/www
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
